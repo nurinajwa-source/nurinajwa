@@ -3,563 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nurin Najwa | Computer Science E-Portfolio</title>
+<title>Nurin Najwa | E-Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-:root{
-  --bg:#eef6ff;
-  --bg2:#ffffff;
-  --card:rgba(255,255,255,0.78);
-  --border:rgba(37,99,235,0.16);
-  --text:#0f172a;
-  --muted:#64748b;
-  --primary:#2563eb;
-  --secondary:#06b6d4;
-  --accent:#7c3aed;
-  --green:#16a34a;
-  --shadow:0 20px 50px rgba(37,99,235,0.12);
-}
-
-html[data-theme="dark"]{
-  --bg:#050816;
-  --bg2:#0b1020;
-  --card:rgba(255,255,255,0.075);
-  --border:rgba(255,255,255,0.14);
-  --text:#f8fafc;
-  --muted:#a8b3c7;
-  --primary:#38bdf8;
-  --secondary:#22d3ee;
-  --accent:#a78bfa;
-  --green:#4ade80;
-  --shadow:0 25px 70px rgba(0,0,0,0.38);
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Inter',sans-serif;
-  background:
-    radial-gradient(circle at 15% 10%, rgba(56,189,248,.25), transparent 28%),
-    radial-gradient(circle at 85% 15%, rgba(167,139,250,.22), transparent 28%),
-    radial-gradient(circle at 50% 90%, rgba(74,222,128,.14), transparent 30%),
-    var(--bg);
-  color:var(--text);
-  line-height:1.7;
-  transition:.3s;
-}
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:
-    linear-gradient(rgba(100,116,139,.10) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100,116,139,.10) 1px, transparent 1px);
-  background-size:50px 50px;
-  z-index:-1;
-}
-
-.container{
-  width:90%;
-  max-width:1180px;
-  margin:auto;
-}
-
-nav{
-  position:sticky;
-  top:0;
-  z-index:99;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid var(--border);
-}
-
-html[data-theme="dark"] nav{
-  background:rgba(5,8,22,.72);
-}
-
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:16px 0;
-}
-
-.logo{
-  font-family:'JetBrains Mono',monospace;
-  font-size:18px;
-  font-weight:800;
-  color:var(--primary);
-}
-
-.logo span{
-  color:var(--green);
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:18px;
-}
-
-.nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:14px;
-  font-weight:700;
-}
-
-.nav-links a:hover{
-  color:var(--primary);
-}
-
-.theme-btn{
-  border:1px solid var(--border);
-  background:var(--card);
-  color:var(--text);
-  padding:9px 14px;
-  border-radius:999px;
-  cursor:pointer;
-  font-weight:800;
-}
-
-.hero{
-  min-height:92vh;
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:45px;
-  align-items:center;
-  padding:70px 0;
-}
-
-.badge{
-  display:inline-block;
-  font-family:'JetBrains Mono',monospace;
-  font-size:13px;
-  color:var(--primary);
-  background:rgba(56,189,248,.12);
-  border:1px solid var(--border);
-  padding:8px 15px;
-  border-radius:999px;
-  margin-bottom:20px;
-}
-
-h1{
-  font-size:58px;
-  line-height:1.05;
-  letter-spacing:-2px;
-  margin-bottom:20px;
-}
-
-h1 span{
-  background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-  color:var(--muted);
-  max-width:650px;
-  margin-bottom:28px;
-}
-
-.btn-group{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  text-decoration:none;
-  padding:13px 22px;
-  border-radius:14px;
-  font-weight:800;
-  font-size:14px;
-  transition:.3s;
-}
-
-.btn-primary{
-  color:white;
-  background:linear-gradient(135deg,var(--primary),var(--accent));
-}
-
-.btn-secondary{
-  color:var(--text);
-  background:var(--card);
-  border:1px solid var(--border);
-}
-
-.btn:hover{
-  transform:translateY(-4px);
-}
-/* ===== PROFILE SECTION ===== */
-
-.profile-card{
-    width:100%;
-    max-width:420px;
-
-    background:#ffffff;
-    border-radius:24px;
-
-    padding:40px 30px;
-    margin:auto;
-
-    text-align:center;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
-
-    border:1px solid #eeeeee;
-}
-
-/* PROFILE IMAGE */
-
-.profile-img{
-    width:160px;
-    height:160px;
-
-    margin:auto;
-    margin-bottom:25px;
-}
-
-.profile-img img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    border-radius:50%;
-
-    border:6px solid #f3f4f6;
-}
-
-/* NAME */
-
-.profile-info h2{
-    font-size:34px;
-    font-weight:700;
-    color:#111827;
-
-    margin-bottom:10px;
-}
-
-/* ROLE */
-
-.profile-role{
-    font-size:18px;
-    font-weight:600;
-
-    color:#6366f1;
-
-    margin-bottom:18px;
-}
-
-/* DESCRIPTION */
-
-.profile-desc{
-    font-size:15px;
-    line-height:1.8;
-
-    color:#6b7280;
-
-    margin-bottom:25px;
-}
-
-/* TAGS */
-
-.profile-tags{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.profile-tags span{
-    background:#f5f5f5;
-
-    padding:8px 16px;
-
-    border-radius:999px;
-
-    font-size:13px;
-    font-weight:500;
-
-    color:#374151;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .profile-card{
-        padding:30px 20px;
-    }
-
-    .profile-info h2{
-        font-size:28px;
-    }
-
-    .profile-role{
-        font-size:16px;
-    }
-
-}
-
-.terminal{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:28px;
-  backdrop-filter:blur(18px);
-  box-shadow:var(--shadow);
-  overflow:hidden;
-}
-
-.terminal-top{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  padding:15px;
-  border-bottom:1px solid var(--border);
-  background:rgba(148,163,184,.12);
-}
-
-.dot{
-  width:12px;
-  height:12px;
-  border-radius:50%;
-}
-
-.red{background:#ff5f56;}
-.yellow{background:#ffbd2e;}
-.green{background:#27c93f;}
-
-.file-name{
-  font-family:'JetBrains Mono',monospace;
-  color:var(--muted);
-  margin-left:10px;
-  font-size:13px;
-}
-
-.terminal-body{
-  padding:28px;
-  font-family:'JetBrains Mono',monospace;
-  font-size:14px;
-}
-
-.line{
-  margin-bottom:12px;
-}
-
-.key{color:var(--primary);}
-.value{color:var(--green);}
-.string{color:#facc15;}
-.comment{color:var(--muted);}
-
-section{
-  padding:75px 0;
-}
-
-.section-title{
-  margin-bottom:42px;
-}
-
-.section-title small{
-  font-family:'JetBrains Mono',monospace;
-  color:var(--primary);
-  font-weight:800;
-}
-
-.section-title h2{
-  font-size:38px;
-  margin-top:8px;
-  margin-bottom:10px;
-}
-
-.section-title p{
-  color:var(--muted);
-  max-width:720px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
-.grid-2{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:22px;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:26px;
-  backdrop-filter:blur(16px);
-  box-shadow:var(--shadow);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-6px);
-  border-color:var(--primary);
-}
-
-.card h3{
-  margin-bottom:12px;
-}
-
-.card p,
-.card li{
-  color:var(--muted);
-  font-size:15px;
-}
-
-ul{
-  padding-left:20px;
-}
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  margin-top:16px;
-}
-
-.tag{
-  font-family:'JetBrains Mono',monospace;
-  font-size:12px;
-  background:rgba(56,189,248,.12);
-  border:1px solid var(--border);
-  color:var(--primary);
-  padding:7px 11px;
-  border-radius:999px;
-  font-weight:700;
-}
-
-.timeline{
-  display:grid;
-  gap:18px;
-}
-
-.timeline-item{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-left:5px solid var(--primary);
-  border-radius:22px;
-  padding:24px;
-  box-shadow:var(--shadow);
-}
-
-.timeline-item h3{
-  color:var(--primary);
-  margin-bottom:8px;
-}
-
-.timeline-item p{
-  color:var(--muted);
-}
-
-.project{
-  min-height:300px;
-}
-
-.project-no{
-  font-family:'JetBrains Mono',monospace;
-  color:var(--primary);
-  font-size:13px;
-  margin-bottom:10px;
-  font-weight:800;
-}
-
-.reflection{
-  background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(167,139,250,.14));
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:35px;
-  box-shadow:var(--shadow);
-}
-
-.reflection h3{
-  color:var(--primary);
-  margin-bottom:8px;
-}
-
-.reflection p{
-  color:var(--muted);
-  margin-bottom:22px;
-}
-
-footer{
-  text-align:center;
-  padding:30px 0;
-  border-top:1px solid var(--border);
-  color:var(--muted);
-  font-size:14px;
-}
-
-@media(max-width:900px){
-  .hero,
-  .grid,
-  .grid-2{
-    grid-template-columns:1fr;
-  }
-
-  h1{
-    font-size:42px;
-  }
-
-  .nav-links a{
-    display:none;
-  }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
-  <div class="container navbar">
-    <div class="logo">NURINAJWA<span>()</span></div>
+<div id="navbar"></div>
 
-    <div class="nav-links">
-      <a href="#career">Career</a>
-      <a href="#skills">Skills</a>
-      <a href="#plan">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#reflection">Activities</a>
-      <button class="theme-btn" onclick="toggleTheme()">Night Mode</button>
-    </div>
-  </div>
-</nav>
-
-<header class="container hero">
+<header id="home" class="container hero">
   <div>
     <div class="badge">Computer Science Student • Web Developer Internship Seeker</div>
 
     <h1>Hi, I’m <span>Nurin Najwa</span></h1>
 
     <p>
-      A Computer Science (Internet Computing) student currently pursuing a degree with a CGPA of 3.63. 
-      I have hands-on experience in developing functional and user-friendly web and mobile applications using Flutter, 
-      Firebase, Laravel, CodeIgniter, PHP, MySQL, HTML, CSS, and JavaScript. I am strongly interested in front-end development 
-      and currently seeking an internship opportunity to gain practical industry experience and further develop my skills as a Web Developer.
+      A Computer Science (Internet Computing) student currently pursuing a degree with a CGPA of 3.63.
+      I have hands-on experience in developing functional and user-friendly web and mobile applications using Flutter,
+      Firebase, Laravel, CodeIgniter, PHP, MySQL, HTML, CSS, and JavaScript.
     </p>
 
     <div class="btn-group">
       <a href="#projects" class="btn btn-primary">View My Projects</a>
-      <a href="#skills" class="btn btn-secondary">Explore Skills</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
     </div>
   </div>
 
@@ -572,67 +41,70 @@ footer{
     </div>
 
     <div class="terminal-body profile-body">
+      <div class="profile-card">
+        <div class="profile-img">
+          <img src="img2.jpg" alt="Nurin Najwa">
+        </div>
 
-  <div class="profile-card">
+        <div class="profile-info">
+          <h2>Nurin Najwa</h2>
 
-    <div class="profile-img">
-        <img src="IMG_3421.JPG" alt="Nurin Najwa">
-    </div>
+          <p class="profile-role">Computer Science Student</p>
 
-    <div class="profile-info">
+          <p class="profile-desc">
+            Web Developer internship seeker with experience in mobile apps,
+            web systems, databases, basic networking, system support and troubleshooting.
+          </p>
 
-        <h2>Nurin Najwa</h2>
-
-        <p class="profile-role">
-            Computer Science Student
-        </p>
-
-        <p class="profile-desc">
-            Web Developer internship seeker with experience in
-            mobile apps, web systems, databases, basic networking,
-            system support and troubleshooting.
-        </p>
-
-        <div class="profile-tags">
+          <div class="profile-tags">
             <span>Flutter</span>
             <span>Firebase</span>
             <span>Laravel</span>
             <span>CodeIgniter</span>
             <span>MySQL</span>
+          </div>
         </div>
-
+      </div>
     </div>
-
-</div>
-</div>
-</div>
+  </div>
 </header>
 
-<section id="career">
+<section id="about">
   <div class="container">
     <div class="section-title">
-      <small>01 / CAREER OBJECTIVE</small>
-      <h2>Web Developer</h2>
+      <small>01 / ABOUT ME</small>
+      <h2>About Me</h2>
       <p>
-        I am seeking an internship opportunity to gain practical industry experience and improve my skills in web development, front-end design, databases, and software development.
+        I am interested in front-end development, web systems, mobile applications,
+        and creating clean user-friendly interfaces.
       </p>
     </div>
 
     <div class="grid-2">
       <div class="card">
-        <h3>Career Interest</h3>
+        <h3>Career Objective</h3>
         <p>
-          My career interest is in Web Development because I enjoy creating user-friendly systems, designing clean interfaces, and building applications that can solve real user problems.
+          I am currently seeking an internship opportunity to gain practical industry experience
+          and further develop my skills as a Web Developer.
         </p>
       </div>
 
       <div class="card">
-        <h3>Contact Information</h3>
+        <h3>Education</h3>
+        <p>
+          Bachelor in Computer Science (Internet Computing) with Honors<br>
+          University Sultan Zainal Abidin (UniSZA), Besut Campus<br>
+          CGPA: 3.63
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Technical Skills</h3>
         <ul>
-          <li>Address: No 21 Jalan Indah 1/2, Taman Puchong Indah, 47100 Puchong, Selangor</li>
-          <li>Phone: 0196159450</li>
-          <li>Email: nurinajwanizat@gmail.com</li>
-          <li>LinkedIn: linkedin.com/in/nurin-najwa-40185b299</li>
+          <li>PHP, JavaScript, HTML, CSS</li>
+          <li>Laravel 9, Flutter, CodeIgniter 4</li>
+          <li>MySQL and Firebase</li>
+          <li>Basic networking and troubleshooting</li>
         </ul>
       </div>
 
@@ -641,125 +113,47 @@ footer{
         <ul>
           <li>Attention to detail</li>
           <li>Adaptability</li>
-          <li>Willingness to learn</li>
           <li>Teamwork and communication</li>
-          <li>Problem-solving</li>
+          <li>Willingness to learn</li>
         </ul>
-      </div>
-
-      <div class="card">
-        <h3>Relevant Knowledge</h3>
-        <p>
-          I have studied core areas including computer networking, web and mobile application development, database systems, and software engineering. I also gained knowledge in network architecture, protocols, and basic network security concepts.
-        </p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="skills">
+<section id="blog">
   <div class="container">
     <div class="section-title">
-      <small>02 / SKILLS</small>
-      <h2>My Current Skills</h2>
+      <small>02 / BLOG</small>
+      <h2>My Learning Journey</h2>
       <p>
-        This section highlights my programming, framework, development, design, database, productivity, and language skills.
+        A simple blog section to share my learning experience, project development,
+        and growth as a Computer Science student.
       </p>
     </div>
 
     <div class="grid">
       <div class="card">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li>Programming Languages: PHP, JavaScript, HTML, CSS</li>
-          <li>Frameworks: Laravel 9, Flutter, CodeIgniter 4</li>
-          <li>Database: MySQL</li>
-          <li>Others: Basic networking, system support and troubleshooting</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">PHP</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-        </div>
+        <h3>Learning Flutter & Firebase</h3>
+        <p>
+          I learned how to build mobile applications, connect Firebase Authentication,
+          use Cloud Firestore, and design user-friendly mobile interfaces.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Tools</h3>
-        <ul>
-          <li>Android Studio</li>
-          <li>NetBeans</li>
-          <li>XAMPP</li>
-          <li>Arduino</li>
-          <li>Canva and CapCut</li>
-          <li>Microsoft Word and PowerPoint</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">Android Studio</span>
-          <span class="tag">XAMPP</span>
-          <span class="tag">Arduino</span>
-        </div>
+        <h3>Building Web Systems</h3>
+        <p>
+          I developed web-based systems using Laravel, CodeIgniter, PHP, and MySQL,
+          including dashboards, login systems, CRUD functions, and order management.
+        </p>
       </div>
 
       <div class="card">
-        <h3>Languages</h3>
-        <ul>
-          <li>Malay: Native proficiency</li>
-          <li>English: Conversational, written and spoken</li>
-        </ul>
-        <div class="tags">
-          <span class="tag">Malay</span>
-          <span class="tag">English</span>
-          <span class="tag">Communication</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="plan">
-  <div class="container">
-    <div class="section-title">
-      <small>03 / EDUCATION</small>
-      <h2>Academic Background</h2>
-      <p>
-        My education background includes degree studies, matriculation, and secondary school qualification.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>Bachelor in Computer Science (Internet Computing) with Honors</h3>
+        <h3>Exploring IoT & Arduino</h3>
         <p>
-          University Sultan Zainal Abidin (UniSZA), Besut Campus<br>
-          October 2023 - Now<br>
-          CGPA: 3.63<br>
-          Studied computer networking, web and mobile application development, database systems, and software engineering.
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Malacca Matriculation College</h3>
-        <p>
-          October 2021 - May 2023<br>
-          CGPA: 3.38<br>
-          Stream: Science Physical
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Sijil Pelajaran Malaysia (SPM)</h3>
-        <p>
-          2019 - 2021<br>
-          Result: 1A 1A- 3B+ 1B 2D 1E
-        </p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Certificate</h3>
-        <p>
-          Dean’s List Award for Semester 2, 3, and 5.<br>
-          Explore AI Basic by HRD Corp e-LATiH, covering basic AI concepts and applications in modern technology and digital solutions.
+          I gained basic experience with Arduino and IoT projects such as an automatic
+          night light sensor and plant monitoring system.
         </p>
       </div>
     </div>
@@ -769,10 +163,11 @@ footer{
 <section id="projects">
   <div class="container">
     <div class="section-title">
-      <small>04 / PROJECTS</small>
+      <small>03 / PROJECTS</small>
       <h2>My Projects</h2>
       <p>
-        These projects show my learning experience in mobile application development, web development, IoT, and Arduino.
+        These projects show my experience in mobile application development,
+        web development, IoT, and Arduino.
       </p>
     </div>
 
@@ -781,7 +176,8 @@ footer{
         <div class="project-no">PROJECT 01</div>
         <h3>SmartBite - Personalized Nutrition System</h3>
         <p>
-          Final Year Project (Ongoing), October 2025 - Now. Built a Flutter-based mobile app integrated with Firebase for personalized nutrition and meal recommendation. Applied rule-based logic to generate meal suggestions based on user input and dietary preferences.
+          Final Year Project using Flutter and Firebase. The app provides personalized
+          nutrition and meal recommendations using rule-based ingredient matching.
         </p>
         <div class="tags">
           <span class="tag">Flutter</span>
@@ -794,7 +190,8 @@ footer{
         <div class="project-no">PROJECT 02</div>
         <h3>PlantCare IoT - Smart Monitoring System</h3>
         <p>
-          Academic Project, Semester 5 (2025/2026), November 2025. Developed a web-based system using Laravel to monitor plant conditions and manage automated watering features. Simulated IoT data for soil moisture and water level monitoring through a web dashboard.
+          A Laravel-based web system that monitors plant conditions and simulates IoT data
+          such as soil moisture and water level through a web dashboard.
         </p>
         <div class="tags">
           <span class="tag">Laravel</span>
@@ -807,11 +204,12 @@ footer{
         <div class="project-no">PROJECT 03</div>
         <h3>Automatic Night Light Sensor</h3>
         <p>
-          Academic Project, Semester 4 (2024/2025), June 2025. Developed an automatic lighting system using Arduino and a light sensor to detect brightness levels.
+          An Arduino project that automatically turns on the light when the environment is dark
+          and turns it off when the surrounding becomes bright.
         </p>
         <div class="tags">
           <span class="tag">Arduino</span>
-          <span class="tag">Light Sensor</span>
+          <span class="tag">Sensor</span>
           <span class="tag">IoT</span>
         </div>
       </div>
@@ -819,50 +217,54 @@ footer{
   </div>
 </section>
 
-<section id="reflection">
+<section id="contact">
   <div class="container">
     <div class="section-title">
-      <small>05 / EXPERIENCE & INVOLVEMENT</small>
-      <h2>Work Experience, Activities and References</h2>
+      <small>04 / CONTACT</small>
+      <h2>Get In Touch</h2>
       <p>
-        This section includes my work experience, leadership involvement, activities, and reference information.
+        Feel free to contact me for internship opportunities, collaboration,
+        or professional networking.
       </p>
     </div>
 
-    <div class="reflection">
-      <h3>Service Crew, Mixue</h3>
-      <p>
-        June 2021 - October 2023, Full-Time. Provided efficient and friendly customer service in a fast-paced food and beverage environment. Collaborated with team members to ensure smooth daily operations during peak hours.
-      </p>
+    <div class="grid-2">
+      <div class="card">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> nurinajwanizat@gmail.com</p>
+        <p><strong>Phone:</strong> 019-6159450</p>
+        <p><strong>LinkedIn:</strong> linkedin.com/in/nurin-najwa-40185b299</p>
+      </div>
 
-      <h3>Retail Assistant, Zoe Arisah</h3>
-      <p>
-        October 2025 - March 2026, Part-Time. Created engaging content for social media platforms to promote products and increase brand awareness. Planned and executed simple marketing strategies to attract potential customers.
-      </p>
-
-      <h3>Leadership & Involvement</h3>
-      <p>
-        SULAM Community Project, Warung Roti Canai Utara. Assisted in improving digital marketing and social media presence for a local food business. Created simple promotional content to increase customer engagement and brand visibility.
-      </p>
-
-      <h3>Activities</h3>
-      <p>
-        Participated in SPORTS - Sukan Antara Fakulti (SAF) netball competition in November 2025, demonstrating teamwork, discipline, and communication skills.
-      </p>
-
-      <h3>Reference</h3>
-      <p>
-        Mrs. Raja Hasyifah Binti Raja Bongsu, Internship Coordinator, Faculty of Informatics and Computing, Universiti Sultan Zainal Abidin, Besut Campus. Phone: 09-6993020. Email: rajahasyifah@unisza.edu.my
-      </p>
+      <div class="card">
+        <h3>Reference</h3>
+        <p>
+          Mrs. Raja Hasyifah Binti Raja Bongsu<br>
+          Internship Coordinator<br>
+          Faculty of Informatics and Computing<br>
+          Universiti Sultan Zainal Abidin<br>
+          Email: rajahasyifah@unisza.edu.my
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Nurin Najwa | Computer Science E-Portfolio</p>
-</footer>
+<div id="footer"></div>
 
 <script>
+fetch("navbar.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+  });
+
+fetch("footer.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("footer").innerHTML = data;
+  });
+
 function toggleTheme(){
   const html = document.documentElement;
   const btn = document.querySelector(".theme-btn");
