@@ -584,6 +584,15 @@ footer{
   }
 }
 
+.section-title.center{
+    text-align:center;
+}
+
+.section-title.center p{
+    max-width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
 .about-page{
     padding-top:120px;
 }
