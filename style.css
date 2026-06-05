@@ -826,6 +826,62 @@ footer{
 
 .contact-grid{
     grid-template-columns:1fr;
+ }
 }
 
+.resume-section{
+  padding:40px 0 80px;
 }
+
+.resume-card{
+  background:linear-gradient(135deg,rgba(56,189,248,.12),rgba(167,139,250,.14));
+  border:1px solid var(--border);
+  border-radius:30px;
+  padding:35px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:25px;
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(20px);
+}
+
+.resume-card small{
+  font-family:'JetBrains Mono',monospace;
+  color:var(--primary);
+  font-weight:800;
+}
+
+.resume-card h2{
+  font-size:34px;
+  margin:8px 0 10px;
+}
+
+.resume-card p{
+  color:var(--muted);
+  max-width:650px;
+}
+
+.resume-btn{
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  padding:14px 24px;
+  border-radius:16px;
+  font-weight:800;
+  white-space:nowrap;
+  transition:.3s;
+}
+
+.resume-btn:hover{
+  transform:translateY(-4px);
+}
+
+@media(max-width:768px){
+  .resume-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+
