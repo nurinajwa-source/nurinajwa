@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | Nurin Najwa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<section class="contact-page">
+
+<div class="container">
+
+<div class="section-title center">
+<small>CONTACT ME</small>
+<h2>Let's Connect</h2>
+<p>
+Feel free to reach out if you would like to collaborate,
+discuss projects, internship opportunities, or simply connect.
+</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-info-card">
+
+<h3>Get In Touch</h3>
+
+<p>
+I'm always open to discussing new projects,
+creative ideas, collaborations and internship opportunities.
+</p>
+
+<div class="contact-item">
+📧 nurinajwanizat@gmail.com
+</div>
+
+<div class="contact-item">
+📱 019-6159450
+</div>
+
+<div class="contact-item">
+💼 LinkedIn
+</div>
+
+<div class="contact-item">
+💻 GitHub
+</div>
+
+</div>
+
+<div class="contact-form-card">
+
+<form
+action="https://formspree.io/f/YOUR_FORM_ID"
+method="POST"
+>
+
+<div class="form-group">
+<label>Your Name</label>
+<input type="text" name="name" required>
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label>Subject</label>
+<input type="text" name="subject" required>
+</div>
+
+<div class="form-group">
+<label>Message</label>
+<textarea
+name="message"
+rows="6"
+required
+></textarea>
+</div>
+
+<button type="submit" class="contact-btn">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<div id="footer"></div>
+
+<script>
+
+fetch("navbar.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("navbar").innerHTML = data;
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+document.getElementById("footer").innerHTML = data;
+});
+
+</script>
+
+</body>
+</html>
