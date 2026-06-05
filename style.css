@@ -772,6 +772,16 @@ footer{
   color:var(--muted);
 }
 
+.contact-link{
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-link:hover{
+    text-decoration:underline;
+}
+
 .form-group{
   margin-bottom:20px;
 }
