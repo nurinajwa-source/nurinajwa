@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | Nurin Najwa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<section class="projects-page">
+  <div class="container">
+
+    <div class="section-title center">
+      <small>MY PROJECTS</small>
+      <h2>Projects Portfolio</h2>
+      <p>
+        A collection of projects that showcase my experience in mobile application development,
+        web development, database management, UI/UX design and system development.
+      </p>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-header">FINAL YEAR PROJECT</div>
+
+        <h3>SmartBite</h3>
+
+        <p>
+          SmartBite is a personalized nutrition and meal recommendation mobile application
+          developed using Flutter and Firebase. The app helps users discover suitable meals
+          based on their dietary preferences, nutrition goals and available ingredients.
+        </p>
+
+        <div class="project-details">
+          <p><strong>Status:</strong> Ongoing</p>
+          <p><strong>Role:</strong> Mobile App Developer</p>
+        </div>
+
+        <div class="project-tech">
+          <span>Flutter</span>
+          <span>Firebase</span>
+          <span>Firestore</span>
+          <span>Rule-Based Logic</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">MOBILE APP IDEA</div>
+
+        <h3>FocusBuddy</h3>
+
+        <p>
+          FocusBuddy is a study timer application idea based on the Pomodoro Technique.
+          It is designed to help students manage study sessions, take proper breaks,
+          stay focused and improve productivity while studying.
+        </p>
+
+        <div class="project-details">
+          <p><strong>Status:</strong> Prototype / Concept</p>
+          <p><strong>Role:</strong> UI/UX & App Planner</p>
+        </div>
+
+        <div class="project-tech">
+          <span>Flutter</span>
+          <span>UI/UX Design</span>
+          <span>Productivity App</span>
+          <span>Pomodoro</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">WEB DEVELOPMENT</div>
+
+        <h3>PlantCare IoT</h3>
+
+        <p>
+          PlantCare IoT is a smart plant monitoring system developed using Laravel and MySQL.
+          The system helps users monitor plant conditions, manage watering information and
+          view simulated IoT data through a web dashboard.
+        </p>
+
+        <div class="project-details">
+          <p><strong>Status:</strong> Completed</p>
+          <p><strong>Role:</strong> Web Developer</p>
+        </div>
+
+        <div class="project-tech">
+          <span>Laravel</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>IoT</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">WEB DEVELOPMENT</div>
+
+        <h3>Fashion E-Commerce System</h3>
+
+        <p>
+          A fashion-based e-commerce system developed using CodeIgniter 4.
+          The system includes user registration, login, product listing, buy now function,
+          order tracking, profile update and admin order management.
+        </p>
+
+        <div class="project-details">
+          <p><strong>Status:</strong> Completed</p>
+          <p><strong>Role:</strong> Full Stack Developer</p>
+        </div>
+
+        <div class="project-tech">
+          <span>CodeIgniter 4</span>
+          <span>PHP</span>
+          <span>MySQL</span>
+          <span>Bootstrap</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<div id="footer"></div>
+
+<script>
+fetch("navbar.html")
+.then(response => response.text())
+.then(data => {
+  document.getElementById("navbar").innerHTML = data;
+});
+
+fetch("footer.html")
+.then(response => response.text())
+.then(data => {
+  document.getElementById("footer").innerHTML = data;
+});
+
+function toggleTheme(){
+  const html = document.documentElement;
+
+  if(html.getAttribute("data-theme") === "dark"){
+    html.setAttribute("data-theme","light");
+  }else{
+    html.setAttribute("data-theme","dark");
+  }
+}
+</script>
+
+</body>
+</html>
